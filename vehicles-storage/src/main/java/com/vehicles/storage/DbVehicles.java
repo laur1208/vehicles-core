@@ -18,6 +18,7 @@ public class DbVehicles implements Vehicles {
     @Override
     public Vehicle getById(Integer id) {
 
+        //should external Rest reference be used here?
         Car car = new RestBMW().cars().getById(id);
 
         return new StoredVehicle(car.id());
