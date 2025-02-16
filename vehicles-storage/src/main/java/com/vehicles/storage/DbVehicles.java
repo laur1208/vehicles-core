@@ -1,5 +1,7 @@
 package com.vehicles.storage;
 
+import com.bmw.api.Car;
+import com.bmw.core.rest.RestBMW;
 import com.vehicles.api.Storage;
 import com.vehicles.api.Vehicle;
 import com.vehicles.api.Vehicles;
@@ -15,6 +17,9 @@ public class DbVehicles implements Vehicles {
 
     @Override
     public Vehicle getById(Integer id) {
-        return new StoredVehicle(id);
+
+        Car car = new RestBMW().cars().getById(id);
+
+        return new StoredVehicle(car.id());
     }
 }
