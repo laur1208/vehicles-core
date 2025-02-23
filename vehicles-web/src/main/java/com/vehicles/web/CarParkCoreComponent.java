@@ -1,6 +1,7 @@
 package com.vehicles.web;
 
 import com.vehicles.api.CarPark;
+import com.vehicles.api.User;
 import com.vehicles.api.Vehicles;
 import com.vehicles.core.CarParkCore;
 import com.vehicles.storage.CarParkStorage;
@@ -26,8 +27,9 @@ public class CarParkCoreComponent implements CarPark {
         this.carPark = carPark;
     }
 
+
     @Override
-    public Vehicles vehicles() {
-        return this.carPark.vehicles();
+    public User user() {
+        return this.carPark.user();
     }
 }
